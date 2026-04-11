@@ -9,7 +9,8 @@ export default defineConfig({
       '@': path.resolve(__dirname, './client/src'),
     },
   },
-  base: '/Portfolio/',  // ← ADD THIS LINE
+  root: './client',
+  base: '/Portfolio/',
   build: {
     outDir: '../dist',
     emptyOutDir: true,
