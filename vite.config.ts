@@ -11,7 +11,7 @@ export default defineConfig({
   },
   base: '/Portfolio/',  // ← ADD THIS LINE
   build: {
-    outDir: 'dist',
+    outDir: '../dist',
     emptyOutDir: true,
   },
 })
