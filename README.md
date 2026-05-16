@@ -1,166 +1,75 @@
 # Syed Farhan Ali — Portfolio
 
-A premium, dark-themed portfolio site for an AI/ML engineer. Built with
-**Vite + React + TailwindCSS + Framer Motion**, designed to feel like the kind
-of site you'd see from a senior AI researcher or technical founder — not a
-template.
+> The personal site of an AI/ML engineer.
+> Live: [Portfolio ↗](https://portfolio-blue-rho-lpjidaffzv.vercel.app/) · [github.com/farhansyedAli ↗](https://github.com/farhansyedAli)
 
-## Live preview
+<p align="center">
+  <img src="https://img.shields.io/badge/React-18-22D3EE?style=flat-square&logo=react&logoColor=white" alt="React 18" />
+  <img src="https://img.shields.io/badge/Vite-5-A78BFA?style=flat-square&logo=vite&logoColor=white" alt="Vite 5" />
+  <img src="https://img.shields.io/badge/TailwindCSS-3-22D3EE?style=flat-square&logo=tailwindcss&logoColor=white" alt="Tailwind 3" />
+  <img src="https://img.shields.io/badge/Framer_Motion-11-A78BFA?style=flat-square&logo=framer&logoColor=white" alt="Framer Motion 11" />
+  <img src="https://img.shields.io/badge/Deployed_on-Vercel-000?style=flat-square&logo=vercel&logoColor=white" alt="Vercel" />
+</p>
 
-Once deployed, link it here.
+---
 
-## Stack
+## Sections
 
-- **React 18** + **Vite 5** — fast dev, near-instant HMR, lean production builds
-- **TailwindCSS 3** — utility-first styling with a small custom theme layer
-- **Framer Motion 11** — viewport-triggered reveals, scroll-aware nav, micro-interactions
+| # | Section | What it contains |
+|---|---------|------------------|
+| 01 | **About** | Long-form bio + a strip of role/focus highlights |
+| 02 | **Selected Work** | Four featured case studies (problem → approach → outcomes) + secondary repos |
+| 03 | **Skills** | Toolkit grouped by intent (AI/ML, Data Science, Algorithms, Frameworks, Languages, Engineering) |
+| 04 | **Journey** | Timeline from first Python script to production AI engineering |
+| —  | **Activity** | GitHub stats and language footprint |
+| 05 | **Contact** | Email, GitHub, LinkedIn, Hugging Face |
+
+## Featured projects in this build
+
+- **Enhanced RAG Chatbot** — PDF/DOCX/TXT retrieval over sentence-transformer embeddings · [Live on HF Spaces ↗](https://huggingface.co/spaces/syedfarhanali99/Rag-pdf-chatbot)
+- **Developer Role Predictor** — multi-class ML classifier on tech-stack features · [Live on HF Spaces ↗](https://huggingface.co/spaces/syedfarhanali99/Developer-role-predictor)
+- **AniMood Bot** — mood-aware anime recommendation chatbot
+- **Tic-Tac-Toe Pro** — Minimax + alpha-beta pruning, Kivy UI
+
+## Tech stack
+
+- **React 18** + **Vite 5** — fast dev, lean production builds
+- **TailwindCSS 3** — utility-first with a small custom theme layer
+- **Framer Motion 11** — viewport-triggered reveals and micro-interactions
 - **lucide-react** — clean, consistent iconography
 
-> Why Vite over Next.js: this is a static marketing site with no SSR/SSG
-> requirements. Vite ships less, builds faster, and deploys identically to any
-> static host (Vercel, Netlify, Cloudflare Pages, GitHub Pages). The component
-> code is framework-portable — if you ever want to move to Next.js later,
-> drop the `src/sections` and `src/components` folders into an `app/page.jsx`
-> and you're done.
 
-## Project structure
 
-```
-portfolio/
-├── public/
-│   └── favicon.svg
-├── src/
-│   ├── components/
-│   │   ├── Nav.jsx              # Sticky / glass top nav
-│   │   └── Primitives.jsx       # Reveal, Eyebrow, Tag, StatusDot
-│   ├── sections/
-│   │   ├── Hero.jsx
-│   │   ├── About.jsx
-│   │   ├── Work.jsx             # Featured case studies
-│   │   ├── Skills.jsx
-│   │   ├── Journey.jsx          # Timeline
-│   │   ├── GitHubSection.jsx
-│   │   ├── Contact.jsx
-│   │   └── Footer.jsx
-│   ├── data/
-│   │   └── content.js           # All copy & project data lives here
-│   ├── App.jsx
-│   ├── main.jsx
-│   └── index.css
-├── index.html
-├── tailwind.config.js
-├── postcss.config.js
-├── vite.config.js
-└── package.json
-```
-
-## Installation
-
-```bash
-# 1. Install dependencies
-npm install
-
-# 2. Start the dev server (http://localhost:5173)
-npm run dev
-
-# 3. Production build
-npm run build
-
-# 4. Preview the production build locally
-npm run preview
-```
-
-Node 18+ is recommended.
-
-## Editing content
-
-**Don't edit individual JSX files for copy changes.** All site content lives in
-one place:
-
-```
-src/data/content.js
-```
-
-This file is structured into:
+Organised into:
 
 - `PROFILE` — name, role, links, email, location
 - `ABOUT` — long-form bio paragraphs + highlight grid
-- `SKILLS` — skill groups (renders as cards)
-- `PROJECTS` — featured case studies (the heavy ones with problem / approach / outcomes)
+- `SKILLS` — skill groups
+- `PROJECTS` — featured case studies
 - `SECONDARY_PROJECTS` — supporting repos shown as chips
 - `JOURNEY` — timeline entries
 - `GITHUB` — public-profile stats and language distribution
 
-Edit a string here, save, and the site updates everywhere it's used.
 
-## Deployment
+## Acknowledgements
 
-### Vercel (recommended)
+- Typography from **Google Fonts** (Bricolage Grotesque, Inter, JetBrains Mono)
+- Icons from **[lucide.dev](https://lucide.dev)**
+- Inspired by the restraint of portfolios from senior AI/ML practitioners — execution over decoration
 
-```bash
-npm i -g vercel
-vercel
-```
+## License
 
-Vercel auto-detects Vite and deploys with sensible defaults.
+All rights reserved.
 
-### Netlify
+## Contact
 
-```
-# netlify.toml
-[build]
-  command = "npm run build"
-  publish = "dist"
-```
+- **Email** — syedfarhanali2005@gmail.com
+- **GitHub** — [@farhansyedAli](https://github.com/farhansyedAli)
+- **LinkedIn** — [in/syed-farhan-ali-shah](https://www.linkedin.com/in/syed-farhan-ali-shah-ab2309287/)
+- **Hugging Face** — [syedfarhanali99](https://huggingface.co/syedfarhanali99)
 
-### Cloudflare Pages / GitHub Pages
+---
 
-Build command: `npm run build`  ·  Output directory: `dist`
-
-For GitHub Pages, set the `base` option in `vite.config.js`:
-
-```js
-export default defineConfig({
-  base: '/your-repo-name/',
-  // ...
-})
-```
-
-## Environment variables
-
-None required. The site is fully static. If you later add a contact-form
-backend or analytics, follow Vite's convention — variables prefixed with
-`VITE_` become available on `import.meta.env`.
-
-## Performance & SEO
-
-- All fonts are loaded via `<link rel="preconnect">` to reduce TTFB
-- Open Graph + Twitter Card meta tags pre-filled in `index.html`
-- Single-page app, no client routing overhead
-- Build output: ~95 KB gzip JS + ~12 KB gzip CSS (well within mobile budgets)
-
-## Suggested future improvements
-
-1. **Real GitHub data** — fetch live commit counts and star totals from the GitHub
-   REST API at build time and bake them into `content.js`. Today the
-   contribution heatmap is a deterministic visual; an API call would make it
-   accurate.
-
-2. **MDX project pages** — promote each featured project to its own
-   case-study page at `/work/[slug]` with an extended writeup, screenshots,
-   and an architecture diagram.
-
-3. **Contact form** — wire the contact section to a service like Resend or
-   Formspree so messages land in the inbox without leaving the site.
-
-4. **Theme switcher** — add a light theme. The CSS variables are already in
-   place; only a few `:root[data-theme="light"]` overrides are needed.
-
-5. **Analytics** — Plausible or Vercel Analytics for visitor insight without
-   the cookie banner overhead.
-
-6. **OG image generator** — generate a per-page Open Graph image from the
-   project data at build time (vercel/og or satori).
-
-7. **Blog** — add a small `/notes` section for shorter technical posts to
-   demonstrate writing alongside building.
+<p align="center">
+  <sub>Built with care in Lahore, Pakistan · © Syed Farhan Ali</sub>
+</p>
