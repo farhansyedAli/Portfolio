@@ -18,9 +18,9 @@ export const PROFILE = {
 export const ABOUT = {
   // Used as the long-form bio
   paragraphs: [
-    "I’m a Data Science undergraduate at Punjab University College of Information Technology (PUCIT), building toward a career in applied AI and machine learning engineering. My focus is on systems that move beyond notebooks — models served behind real APIs, retrieval pipelines that work on messy documents, and applications that ship to users.",
+    "I’m a Data Science undergraduate at Punjab University College of Information Technology (PUCIT), building toward a career in applied AI and machine learning engineering. My focus is on systems that move beyond notebooks, models served behind real APIs, retrieval pipelines that work on messy documents, and applications that ship to users.",
     "Most of my work sits at the intersection of NLP, retrieval-augmented generation, and classical ML. I’ve deployed live applications on Hugging Face Spaces, written algorithmic AI from scratch (Minimax with alpha-beta pruning), and built end-to-end ML projects from data collection through deployment.",
-    "I’m drawn to problems where the model is only half the work — where infrastructure, evaluation, and product design decide whether something is actually useful. My long-term direction is research-informed engineering at companies building real intelligent systems.",
+    "I’m drawn to problems where the model is only half the work, where infrastructure, evaluation, and product design decide whether something is actually useful. My long-term direction is research-informed engineering at companies building real intelligent systems.",
   ],
   highlights: [
     { label: "Education",   value: "BS Data Science · PUCIT" },
@@ -72,7 +72,7 @@ export const PROJECTS = [
     problem:
       "Knowledge workers waste hours scanning PDFs for specific answers. Generic LLM chat doesn't know about their documents, and uploading a 200-page report into a context window is impractical and expensive.",
     approach:
-      "Built a retrieval-augmented chatbot that ingests PDF, DOCX, and TXT files, chunks them, encodes each chunk with a sentence-transformer model, and stores the embeddings in memory. At query time, the user's question is embedded against the same space and the top-k most semantically similar chunks are passed to the model as grounded context — drastically reducing hallucination versus a raw LLM call.",
+      "Built a retrieval-augmented chatbot that ingests PDF, DOCX, and TXT files, chunks them, encodes each chunk with a sentence-transformer model, and stores the embeddings in memory. At query time, the user's question is embedded against the same space and the top-k most semantically similar chunks are passed to the model as grounded context, drastically reducing hallucination versus a raw LLM call.",
     challenges: [
       "Handling heterogeneous document formats (scanned PDFs vs native PDFs vs Word) with consistent extraction",
       "Choosing chunk size + overlap that balances recall (small chunks) against context coherence (large chunks)",
@@ -98,7 +98,7 @@ export const PROJECTS = [
     status: "Live",
     category: "Machine Learning",
     problem:
-      "Tech stacks tend to cluster by role — frontend developers don't usually write CUDA kernels, ML engineers rarely touch React Native. But this signal is often buried in resumes and profiles. The question: can a model recover role from stack alone?",
+      "Tech stacks tend to cluster by role, frontend developers don't usually write CUDA kernels, ML engineers rarely touch React Native. But this signal is often buried in resumes and profiles. The question: can a model recover role from stack alone?",
     approach:
       "Framed it as a multi-class classification problem. Curated a labelled dataset of developer profiles tagged with their roles, engineered features from the technology lists (one-hot + co-occurrence signals), and trained a classical ML pipeline benchmarked across multiple model families. Final model exposed through a Gradio UI where the user enters a stack and gets back a predicted role with confidence.",
     challenges: [
@@ -128,7 +128,7 @@ export const PROJECTS = [
     problem:
       "Existing anime recommendation tools optimise for ratings and genre filters, but most viewing decisions are driven by mood and time available, not by a static taste profile. The product question: can a conversational interface surface better picks than a database filter?",
     approach:
-      "Built a conversational agent that combines three signals — current mood, genre preference, and episode length — to recommend shows. The bot also supports free-form Q&A about anime and a random-pick mode for indecisive users. Conversational state is tracked across turns so the recommendation refines as the user clarifies.",
+      "Built a conversational agent that combines three signals, current mood, genre preference, and episode length, to recommend shows. The bot also supports free-form Q&A about anime and a random-pick mode for indecisive users. Conversational state is tracked across turns so the recommendation refines as the user clarifies.",
     challenges: [
       "Mapping subjective mood inputs to objective tags in the recommendation index",
       "Designing a conversation flow that feels helpful, not interrogative",
@@ -153,7 +153,7 @@ export const PROJECTS = [
     status: "Complete",
     category: "Algorithms & GUI",
     problem:
-      "Tic-Tac-Toe is solved, so the interesting question isn't winning — it's writing an opponent that plays optimally in every position while still feeling responsive on a mobile-class UI. That means implementing classical adversarial search correctly, not just bolting a random move generator to a button.",
+      "Tic-Tac-Toe is solved, so the interesting question isn't winning, it's writing an opponent that plays optimally in every position while still feeling responsive on a mobile-class UI. That means implementing classical adversarial search correctly, not just bolting a random move generator to a button.",
     approach:
       "Implemented the Minimax algorithm from scratch, then added alpha-beta pruning to cut the search tree without changing the optimal move. On a 3×3 board the unpruned tree is small enough to brute force, but the implementation is structured so it generalises to larger boards. Wrapped the engine in a Kivy GUI with neon-themed visuals and a Player-vs-Player mode for local matches.",
     challenges: [
@@ -210,17 +210,17 @@ export const JOURNEY = [
   {
     period: "2024",
     title: "Algorithmic AI",
-    body: "Implemented Minimax with alpha-beta pruning from scratch in the Tic-Tac-Toe project — connecting AI theory to game-playing code.",
+    body: "Implemented Minimax with alpha-beta pruning from scratch in the Tic-Tac-Toe project, connecting AI theory to game-playing code.",
   },
   {
     period: "2025",
     title: "RAG & generative AI",
-    body: "Built the Enhanced RAG Chatbot and AniMood Bot — moving from classification problems into retrieval, embeddings, and conversational interfaces.",
+    body: "Built the Enhanced RAG Chatbot and AniMood Bot, moving from classification problems into retrieval, embeddings, and conversational interfaces.",
   },
   {
     period: "Now",
     title: "Production AI engineering",
-    body: "Building toward shipping AI applications at production scale — deeper into LLM orchestration, evaluation, and the engineering surrounding real ML systems.",
+    body: "Building toward shipping AI applications at production scale, deeper into LLM orchestration, evaluation, and the engineering surrounding real ML systems.",
   },
 ]
 
