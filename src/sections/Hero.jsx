@@ -59,10 +59,10 @@ export default function Hero() {
             transition={{ duration: 0.7, delay: 0.55 }}
             className="lg:col-span-7 text-lg sm:text-xl text-zinc-400 leading-relaxed max-w-2xl"
           >
-            I’m <span className="text-zinc-100 font-medium">{PROFILE.name}</span> — a
-            Data Science undergraduate at <span className="text-zinc-100">PUCIT</span> focused
+            I’m <span className="text-zinc-100 font-medium">{PROFILE.name}</span> , a
+            Data Science undergraduate at <span className="text-zinc-100">PUCIT</span>, focused
             on AI engineering. I build RAG pipelines, ML applications, and algorithmic
-            AI from first principles — and ship them to production.
+            AI from first principles, and ship them to production.
           </motion.p>
 
           <motion.div
