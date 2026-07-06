@@ -90,30 +90,31 @@ export const PROJECTS = [
     accent: "violet",
   },
   {
-    id: "rag-chatbot",
-    title: "Enhanced RAG Chatbot",
-    headline: "Conversational question answering over user-uploaded documents",
-    year: "2025",
+    id: "documind-ai",
+    title: "DocuMind AI",
+    headline: "Production-grade conversational RAG over your personal documents",
+    year: "2026",
     status: "Live",
     category: "AI Engineering",
     problem:
-      "Knowledge workers waste hours scanning PDFs for specific answers. Generic LLM chat doesn't know about their documents, and uploading a 200-page report into a context window is impractical and expensive.",
+      "Cloud-based RAG systems hit rate limits fast — a 50-page PDF produces 300+ chunks, each firing an embedding API call, blowing through free-tier quotas in seconds and leaving documents visible to third parties. Users who want fast, private, follow-up-aware Q&A on their own files have nothing that just works for free.",
     approach:
-      "Built a retrieval-augmented chatbot that ingests PDF, DOCX, and TXT files, chunks them, encodes each chunk with a sentence-transformer model, and stores the embeddings in memory. At query time, the user's question is embedded against the same space and the top-k most semantically similar chunks are passed to the model as grounded context, drastically reducing hallucination versus a raw LLM call.",
+      "Rebuilt the RAG stack so the cloud is only touched for the final answer. Embeddings run entirely on-device via FastEmbed (ONNX Runtime, no PyTorch) into a local FAISS vector store. Only the last step, generating the grounded answer, calls Gemini. Added a conversational memory layer that rewrites follow-up questions into standalone queries before retrieval, so 'what about the second one?' actually works. Wrapped the whole thing in a Streamlit UI with dark/light themes, token streaming, and error surfacing that tells the user which quota they hit and how to fix it.",
     challenges: [
-      "Handling heterogeneous document formats (scanned PDFs vs native PDFs vs Word) with consistent extraction",
-      "Choosing chunk size + overlap that balances recall (small chunks) against context coherence (large chunks)",
-      "Designing a UI that makes retrieval feel like chat, not search",
+      "Persistent 'API limit reached' errors even with fresh keys — root-caused as per-project (not per-key) quotas plus 'ghost 429' lockout, fixed structurally by moving embeddings off the cloud entirely",
+      "PyTorch DLL conflicts silently killing the Python process on Windows — swapped sentence-transformers for FastEmbed (ONNX Runtime) to eliminate the conflict",
+      "Streamlit's default chat layout broke on rerun with messages appearing below the input bar — restructured into a container-first pattern matching ChatGPT/Claude/Gemini",
+      "Retry-on-429 was burning quota faster than it recovered — rewrote the retry policy to distinguish transient server errors from quota errors",
     ],
     outcomes: [
-      "Deployed publicly on Hugging Face Spaces with a Gradio interface",
-      "Supports PDF, DOCX, TXT in a single ingestion pipeline",
-      "Cosine-similarity retrieval over sentence-transformer embeddings",
+      "Full conversational RAG stack running end-to-end on the free tier with zero per-document API cost",
+      "Validated on 5+ documents spanning ~50 pages with 5–10 second end-to-end response time",
+      "Documents stay fully on-device — nothing leaves the user's session at ingestion time",
     ],
-    stack: ["Python", "Sentence-Transformers", "PyMuPDF", "python-docx", "Gradio", "NumPy", "scikit-learn"],
+    stack: ["Python", "LangChain", "Gemini API", "FastEmbed", "FAISS", "Streamlit", "ONNX Runtime"],
     links: {
-      github: "https://github.com/farhansyedAli/RAG-Chatbot",
-      live:   "https://huggingface.co/spaces/syedfarhanali99/Rag-pdf-chatbot",
+      github: "https://github.com/farhansyedAli/DocuMind-ai",
+      live:   "https://huggingface.co/spaces/syedfarhanali99/DocuMind-ai",
     },
     accent: "cyan",
   },
@@ -242,22 +243,27 @@ export const JOURNEY = [
   {
     period: "2025",
     title: "RAG & generative AI",
-    body: "Built the Enhanced RAG Chatbot and AniMood Bot, moving from classification problems into retrieval, embeddings, and conversational interfaces.",
+    body: "Shipped the first version of a RAG chatbot and the AniMood Bot, moving from classification problems into retrieval, embeddings, and conversational interfaces.",
+  },
+  {
+    period: "2026",
+    title: "Agentic AI & production LLM systems",
+    body: "Rebuilt the RAG stack as DocuMind AI with local embeddings and cloud-optional inference, then built an end-to-end AI job application agent that scrapes listings, scores fit with an LLM, and drafts personalized applications - moving into agentic pipelines, LLM orchestration, and production-grade error handling.",
   },
   {
     period: "Now",
-    title: "Production AI engineering",
-    body: "Building toward shipping AI applications at production scale, deeper into LLM orchestration, evaluation, and the engineering surrounding real ML systems.",
+    title: "LLM fine-tuning & MLOps",
+    body: "Moving from LLM application development into the layers underneath - parameter-efficient fine-tuning of open-source models, and the production infrastructure (experiment tracking, containerized serving, cloud deployment) that turns models into reliable services.",
   },
 ]
 
 // ────────── GitHub stats (visible numbers from the profile) ──────────
 export const GITHUB = {
   username: "farhansyedAli",
-  repos: 19,
+  repos: 20+,
   pinned: 6,
   achievements: ["Pull Shark"],
-  hfSpaces: 2,
+  hfSpaces: 3,
   topLanguages: [
     { name: "Python",   pct: 72 },
     { name: "Jupyter",  pct: 12 },
