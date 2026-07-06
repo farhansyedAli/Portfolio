@@ -22,7 +22,7 @@ export default function GitHubSection() {
           <div className="lg:col-span-5 flex lg:items-end">
             <Reveal delay={0.2}>
               <p className="text-zinc-500 leading-relaxed max-w-md">
-                A snapshot of public work — repositories, deployments, and the
+                A snapshot of public work - repositories, deployments, and the
                 language footprint behind everything you’ve seen.
               </p>
             </Reveal>
