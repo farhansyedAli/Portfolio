@@ -260,7 +260,7 @@ export const JOURNEY = [
 // ────────── GitHub stats (visible numbers from the profile) ──────────
 export const GITHUB = {
   username: "farhansyedAli",
-  repos: 20+,
+  repos: 20,
   pinned: 6,
   achievements: ["Pull Shark"],
   hfSpaces: 3,
