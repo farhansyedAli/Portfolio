@@ -68,12 +68,12 @@ export const PROJECTS = [
     problem:
       "Applying for jobs at scale is manually painful: opening each listing, judging fit, writing a fresh cover letter, and drafting an email eats 15+ minutes per role. Most applicants either shortcut with a copy-paste letter (which lands nowhere) or apply to fewer jobs than they should.",
     approach:
-      "Built a modular pipeline that treats each stage — scrape, score, filter, write, draft — as an independent step with cached JSON output. Job listings are fetched from Rozee.pk by reverse-engineering its internal POST API. Each posting is scored 0–10 against a candidate profile by Llama 3.1 (via Groq) using strict prompt rules and structured JSON output. Strong matches trigger tailored cover letters generated under 200 words, and the final stage creates ready-to-review Gmail drafts via OAuth.",
+      "Built a modular pipeline that treats each stage - scrape, score, filter, write, draft - as an independent step with cached JSON output. Job listings are fetched from Rozee.pk by reverse-engineering its internal POST API. Each posting is scored 0–10 against a candidate profile by Llama 3.1 (via Groq) using strict prompt rules and structured JSON output. Strong matches trigger tailored cover letters generated under 200 words, and the final stage creates ready-to-review Gmail drafts via OAuth.",
     challenges: [
-      "Rozee.pk's public HTML doesn't return listings — the site is React-rendered client-side. Solved by reverse-engineering the internal POST API using browser DevTools.",
+      "Rozee.pk's public HTML doesn't return listings - the site is React-rendered client-side. Solved by reverse-engineering the internal POST API using browser DevTools.",
       "LLMs love to invent experience the candidate doesn't have. Solved with strict prompt rules and structured JSON output that constrains the model to facts from the profile only.",
       "Re-running expensive LLM stages during iteration was wasteful. Solved by checkpointing each stage's output as JSON on disk, so any single stage can be re-run without repeating earlier ones.",
-      "Encountered Cloudflare bot protection late in the project — documented honestly in the README as a real-world limitation rather than pretending the pipeline works in every environment.",
+      "Encountered Cloudflare bot protection late in the project - documented honestly in the README as a real-world limitation rather than pretending the pipeline works in every environment.",
     ],
     outcomes: [
       "Scrapes 200+ job listings across multiple role keywords in a single run.",
