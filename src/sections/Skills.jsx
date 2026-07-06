@@ -24,7 +24,7 @@ export default function Skills() {
           <div className="lg:col-span-5 flex lg:items-end">
             <Reveal delay={0.2}>
               <p className="text-zinc-500 leading-relaxed max-w-md">
-                These are the technologies I’ve used to ship the projects above — not a list
+                These are the technologies I’ve used to ship the projects above - not a list
                 of everything I’ve briefly touched. The level of comfort varies; the depth
                 comes from the case studies.
               </p>
