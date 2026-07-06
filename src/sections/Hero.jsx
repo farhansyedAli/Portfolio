@@ -101,7 +101,7 @@ export default function Hero() {
           <div className="grid grid-cols-2 md:grid-cols-4 gap-y-6 gap-x-4 sm:gap-x-8">
             {[
               { k: '04+',  l: 'production-grade projects' },
-              { k: '02',   l: 'live Hugging Face deployments' },
+              { k: '03',   l: 'live Hugging Face deployments' },
               { k: 'RAG',  l: 'NLP & retrieval pipelines' },
               { k: 'Live', l: 'open-source on GitHub' },
             ].map((s, i) => (
