@@ -23,7 +23,7 @@ export default function Work() {
           <div className="lg:col-span-5 flex lg:items-end">
             <Reveal delay={0.2}>
               <p className="text-zinc-500 leading-relaxed max-w-md">
-                Four projects that demonstrate end-to-end thinking — from the problem framing
+                Five projects that demonstrate end-to-end thinking - from the problem framing
                 through the model, the engineering, and the deployment.
               </p>
             </Reveal>
